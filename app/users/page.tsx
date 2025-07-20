@@ -126,13 +126,7 @@ export default function UsersPage() {
         </Link>
         <h1 className="text-3xl font-bold">Users</h1>
       </div>
-      <NotificationListener
-        userId={currentUser}
-        onNotification={(data) => {
-          // Optional: show toast or update state
-          alert(data.content);
-        }}
-      />
+      {currentUser && <NotificationListener userId={currentUser} />}
       {/* Current User Selector */}
       <Card className="mb-6">
         <CardHeader>
